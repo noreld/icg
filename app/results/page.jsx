@@ -4,9 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { title } from "@/components/primitives";
 
-import { Card, CardBody } from "@nextui-org/card";
-import { Progress } from "@nextui-org/progress";
-import { Button } from "@nextui-org/button";
+import { Card, CardBody, Progress, Button } from "@nextui-org/react";
 
 export default function ResultsPage() {
   const [data, setData] = useState([]);

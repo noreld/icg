@@ -5,20 +5,7 @@ import { siteConfig } from "@/config/site";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import { Lock, Mail } from "@geist-ui/icons";
-import { Select, SelectItem } from "@nextui-org/select";
-import { Card, CardBody } from "@nextui-org/card";
-import { Checkbox } from "@nextui-org/checkbox";
-import { Button } from "@nextui-org/button";
-import { Input } from "@nextui-org/input";
-import { Link } from "@nextui-org/link";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-} from "@nextui-org/modal";
+import { Select, SelectItem, Card, CardBody, Button } from "@nextui-org/react";
 
 export default function QuestionsPage() {
   const [responses, setResponses] = useState([]);

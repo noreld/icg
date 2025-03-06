@@ -1,16 +1,14 @@
 "use client";
 
 import { button as buttonStyles } from "@nextui-org/theme";
-import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
 import { title, subtitle } from "@/components/primitives";
-import NavbarComponent from "@/components/navbar";
+import { Button } from "@nextui-org/react";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <NavbarComponent />
       <div className="inline-block max-w-xl text-center justify-center">
         <span className={title({ color: "blue" })}>
           Intelligent Career Guidance&nbsp;
