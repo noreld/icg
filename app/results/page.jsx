@@ -1,9 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { title } from "@/components/primitives";
-import { Button, Progress, Card, CardBody } from "@nextui-org/react";
 import { useState, useEffect } from "react";
+import { title } from "@/components/primitives";
+
+import { Card, CardBody } from "@nextui-org/card";
+import { Progress } from "@nextui-org/progress";
+import { Button } from "@nextui-org/button";
 
 export default function ResultsPage() {
   const [data, setData] = useState([]);
@@ -16,13 +19,15 @@ export default function ResultsPage() {
       try {
         const parsedMessage = JSON.parse(savedValue);
         const patchedMessage = JSON.parse(parsedMessage.message.slice(7, -4));
-        const sortedMessage = Object.entries(patchedMessage).sort((a, b) => b[1] - a[1]);
+        const sortedMessage = Object.entries(patchedMessage).sort(
+          (a, b) => b[1] - a[1]
+        );
         setData(sortedMessage);
       } catch (error) {
-        console.log(error)
-        router.push("/questions")
+        console.log(error);
+        router.push("/questions");
       } finally {
-        window.localStorage.removeItem("result")
+        window.localStorage.removeItem("result");
       }
     }
   }, []);
@@ -34,7 +39,9 @@ export default function ResultsPage() {
 
   return (
     <div className="flex items-center justify-center flex-col gap-8">
-      <h1 className={title({ color: "blue" }) + " p-2"}>Here are top jobs that matched your skills...</h1>
+      <h1 className={title({ color: "blue" }) + " p-2"}>
+        Here are top jobs that matched your skills...
+      </h1>
       <Card className="w-full">
         <CardBody className="flex p-6 gap-5">
           {data.map(([job, score], i) => (
@@ -56,7 +63,15 @@ export default function ResultsPage() {
           ))}
         </CardBody>
       </Card>
-      <Button radius="full" className="w-1/2" variant="shadow" color="primary" onClick={handleGoBack}>Go Back</Button>
+      <Button
+        radius="full"
+        className="w-1/2"
+        variant="shadow"
+        color="primary"
+        onClick={handleGoBack}
+      >
+        Go Back
+      </Button>
     </div>
   );
 }

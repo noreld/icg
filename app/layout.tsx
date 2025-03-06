@@ -4,7 +4,6 @@ import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import "@/styles/globals.css";
 import clsx from "clsx";
-import NavbarComponent from "@/components/navbar";
 
 
 export const metadata: Metadata = {

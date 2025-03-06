@@ -1,7 +1,7 @@
 "use client";
 
 import { button as buttonStyles } from "@nextui-org/theme";
-import { Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
 import { title, subtitle } from "@/components/primitives";
@@ -32,17 +32,6 @@ export default function Home() {
             })} w-full`}
           >
             Let&apos;s Begin
-          </Button>
-        </Link>
-        <Link className="w-full" href={"/dashboard"}>
-          <Button
-            className={`${buttonStyles({
-              color: "secondary",
-              radius: "full",
-              variant: "shadow",
-            })} w-full`}
-          >
-            Visit dashboard
           </Button>
         </Link>
       </div>

@@ -6,7 +6,12 @@
     "**/.hg": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "node_modules": true
+    "node_modules": true,
+    ".next": true,
+    ".vscode": true
   },
-  "hide-files.files": []
+  "hide-files.files": [
+    ".next",
+    ".vscode"
+  ]
 }
