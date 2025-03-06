@@ -5,7 +5,7 @@ import { title } from "@/components/primitives";
 import { Button, Progress, Card, CardBody } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 
-export default function QuestionsPage() {
+export default function ResultsPage() {
   const [data, setData] = useState([]);
 
   const router = useRouter();
@@ -21,7 +21,7 @@ export default function QuestionsPage() {
       } catch (error) {
         console.log(error)
         router.push("/questions")
-      } finally {        
+      } finally {
         window.localStorage.removeItem("result")
       }
     }
@@ -34,7 +34,7 @@ export default function QuestionsPage() {
 
   return (
     <div className="flex items-center justify-center flex-col gap-8">
-      <h1 className={title({ color: "violet" }) + " p-2"}>Here are top jobs that matched your skills...</h1>
+      <h1 className={title({ color: "blue" }) + " p-2"}>Here are top jobs that matched your skills...</h1>
       <Card className="w-full">
         <CardBody className="flex p-6 gap-5">
           {data.map(([job, score], i) => (

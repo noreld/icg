@@ -5,12 +5,14 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
 import { title, subtitle } from "@/components/primitives";
+import NavbarComponent from "@/components/navbar";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <NavbarComponent />
       <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title({ color: "violet" })}>
+        <span className={title({ color: "blue" })}>
           Intelligent Career Guidance&nbsp;
         </span>
         <br />
@@ -20,17 +22,30 @@ export default function Home() {
         </div>
       </div>
 
-      <Link href={"/questions"}>
-        <Button
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-        >
-          Let&apos;s Begin
-        </Button>
-      </Link>
+      <div className="flex flex-col gap-2 w-min">
+        <Link className="w-full" href={"/questions"}>
+          <Button
+            className={`${buttonStyles({
+              color: "primary",
+              radius: "full",
+              variant: "shadow",
+            })} w-full`}
+          >
+            Let&apos;s Begin
+          </Button>
+        </Link>
+        <Link className="w-full" href={"/dashboard"}>
+          <Button
+            className={`${buttonStyles({
+              color: "secondary",
+              radius: "full",
+              variant: "shadow",
+            })} w-full`}
+          >
+            Visit dashboard
+          </Button>
+        </Link>
+      </div>
     </section>
   );
 }

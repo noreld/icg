@@ -1,11 +1,11 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import clsx from "clsx";
-
-import { Providers } from "./providers";
-
 import { siteConfig } from "@/config/site";
+import { Metadata, Viewport } from "next";
 import { fontSans } from "@/config/fonts";
+import { Providers } from "./providers";
+import "@/styles/globals.css";
+import clsx from "clsx";
+import NavbarComponent from "@/components/navbar";
+
 
 export const metadata: Metadata = {
   title: {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
 };
+
 
 export const viewport: Viewport = {
   themeColor: [
@@ -40,7 +41,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col min-h-screen">
             <main className="container flex justify-center mx-auto max-w-7xl px-6 flex-grow">
               {children}
             </main>

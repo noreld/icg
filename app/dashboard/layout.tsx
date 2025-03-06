@@ -1,4 +1,6 @@
-export default function QuestionsLayout({
+import { ArrowLeft } from "@geist-ui/icons";
+
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
